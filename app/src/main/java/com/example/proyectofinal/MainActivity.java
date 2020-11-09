@@ -29,18 +29,26 @@ public class MainActivity extends AppCompatActivity {
         a2=findViewById(R.id.editTextTextPassword);
 
 
+       //btnIniciarSesion.setOnClickListener(view -> {
+            //if (a1.getText().toString().length()==0){
+               Toast toast = Toast.makeText(getBaseContext(), "Bienvenido: ",Toast.LENGTH_SHORT);
+               // toast.show();
+            //}else{
+                //Intent b = new Intent(MainActivity.this,ActivityMenu.class);
+                //startActivity(b);
+            //}
+      //  });
+
         btnIniciarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //if (a1.getText().toString().length()==0){
-                    Toast toast = Toast.makeText(getBaseContext(), "Bienvenido: ",Toast.LENGTH_SHORT);
-                    toast.show();
-                //}else{
-                    Intent b= new Intent(MainActivity.this,ActivityMenu.class);
-                    startActivity(b);
-                //}
+                //7Toast toast = new Toast.makeText(getBaseContext(), "Bienvenido: ", Toast.LENGTH_SHORT);
+                ///toast.show();
+                Intent c = new Intent( MainActivity.this, ActivityMenu.class);
+                startActivity(c);
             }
         });
+
 
         btnRegistro.setOnClickListener(new View.OnClickListener(){
 
