@@ -11,9 +11,18 @@ import android.widget.Toast;
 
 public class ActivityMenu extends AppCompatActivity {
 
+    Button add;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        add=findViewById(R.id.btnAgregandoNota);
+
+        add.setOnClickListener(view ->{
+         Intent b= new Intent(ActivityMenu.this,agregarnota.class);
+         startActivity(b);
+        });
      }
 }
 
