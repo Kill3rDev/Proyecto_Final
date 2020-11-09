@@ -9,9 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class
+MainActivity extends AppCompatActivity {
 
-    //Cambiando el nombre de las variableas para indetificarlas mejor
     Button btnIniciarSesion;
     Button btnRegistro;
 
@@ -29,26 +29,15 @@ public class MainActivity extends AppCompatActivity {
         a2=findViewById(R.id.editTextTextPassword);
 
 
-       //btnIniciarSesion.setOnClickListener(view -> {
+        btnIniciarSesion.setOnClickListener(view -> {
             //if (a1.getText().toString().length()==0){
                Toast toast = Toast.makeText(getBaseContext(), "Bienvenido: ",Toast.LENGTH_SHORT);
-               // toast.show();
+               toast.show();
             //}else{
-                //Intent b = new Intent(MainActivity.this,ActivityMenu.class);
-                //startActivity(b);
+                Intent b = new Intent(MainActivity.this,ActivityMenu.class);
+                startActivity(b);
             //}
-      //  });
-
-        btnIniciarSesion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //7Toast toast = new Toast.makeText(getBaseContext(), "Bienvenido: ", Toast.LENGTH_SHORT);
-                ///toast.show();
-                Intent c = new Intent( MainActivity.this, ActivityMenu.class);
-                startActivity(c);
-            }
         });
-
 
         btnRegistro.setOnClickListener(new View.OnClickListener(){
 
