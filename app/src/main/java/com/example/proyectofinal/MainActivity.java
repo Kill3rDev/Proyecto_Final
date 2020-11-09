@@ -11,8 +11,9 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn;
-    Button btn2;
+    //Cambiando el nombre de las variableas para indetificarlas mejor
+    Button btnIniciarSesion;
+    Button btnRegistro;
 
     EditText a1;
     EditText a2;
@@ -22,13 +23,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btn=findViewById(R.id.button2);
-        btn2=findViewById(R.id.button);
+        btnIniciarSesion=findViewById(R.id.btnIniciarSesion);
+        btnRegistro=findViewById(R.id.btnRegistro);
         a1=findViewById(R.id.editTextTextEmailAddress);
         a2=findViewById(R.id.editTextTextPassword);
 
 
-        btn2.setOnClickListener(new View.OnClickListener() {
+        btnIniciarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //if (a1.getText().toString().length()==0){
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btn.setOnClickListener(new View.OnClickListener(){
+        btnRegistro.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
