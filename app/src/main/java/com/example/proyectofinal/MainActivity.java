@@ -29,15 +29,25 @@ MainActivity extends AppCompatActivity {
         a2=findViewById(R.id.editTextTextPassword);
 
 
-        btnIniciarSesion.setOnClickListener(view -> {
-            //if (a1.getText().toString().length()==0){
-               Toast toast = Toast.makeText(getBaseContext(), "Bienvenido: ",Toast.LENGTH_SHORT);
-               toast.show();
-            //}else{
+        btnIniciarSesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                a1.setError("Prueba advertencia");
+                //String user=a1.getText().toString();
+
+                //if ("".equals(user)){
+                  //  a1.setError("Rellene campo");
+                //}
+
+                Toast toast = Toast.makeText(getBaseContext(), "Bienvenido: ",Toast.LENGTH_SHORT);
+                toast.show();
                 Intent b = new Intent(MainActivity.this,ActivityMenu.class);
                 startActivity(b);
-            //}
+            }
         });
+
+
 
         btnRegistro.setOnClickListener(new View.OnClickListener(){
 
