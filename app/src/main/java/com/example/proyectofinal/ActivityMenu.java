@@ -18,11 +18,14 @@ public class ActivityMenu extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         add=findViewById(R.id.btnAgregandoNota);
+        add.setOnClickListener(new View.OnClickListener(){
 
-        add.setOnClickListener(view ->{
-         Intent b= new Intent(ActivityMenu.this,agregarnota.class);
-         startActivity(b);
+            @Override
+            public void onClick(View view) {
+                Intent a = new Intent(ActivityMenu.this,agregarnota.class);
+            }
         });
+
      }
 }
 
