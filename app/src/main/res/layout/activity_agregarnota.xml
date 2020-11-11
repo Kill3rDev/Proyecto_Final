@@ -8,58 +8,62 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName4"
-        android:background="@drawable/shape"
         android:layout_width="wrap_content"
         android:layout_height="120px"
-        android:layout_marginTop="16dp"
+        android:background="@drawable/shape"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Titulo"
         android:gravity="center"
+        android:hint="Titulo"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintHorizontal_bias="0.079"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
 
     <EditText
         android:id="@+id/editTextTextPersonName5"
-        android:background="@drawable/shape"
         android:layout_width="wrap_content"
         android:layout_height="120px"
-        android:layout_marginTop="68dp"
+        android:background="@drawable/shape"
         android:ems="10"
-        android:hint="Descripción"
         android:gravity="center"
+        android:hint="Descripción"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintHorizontal_bias="0.079"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.09" />
 
     <EditText
         android:id="@+id/txtNota"
-        android:background="@drawable/shape"
         android:layout_width="390dp"
         android:layout_height="526dp"
-        android:layout_marginTop="124dp"
+        android:background="@drawable/shape"
         android:ems="10"
-        android:hint="Ingrese su nota"
         android:gravity="center"
+        android:hint="Ingrese su nota"
         android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintHorizontal_bias="0.238"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6" />
 
     <Button
         android:id="@+id/btnAgregar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="664dp"
         android:text="Guardar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.462"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
