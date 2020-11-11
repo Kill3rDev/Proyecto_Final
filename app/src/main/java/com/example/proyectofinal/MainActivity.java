@@ -25,25 +25,34 @@ MainActivity extends AppCompatActivity {
 
         btnIniciarSesion=findViewById(R.id.btnIniciarSesion);
         btnRegistro=findViewById(R.id.btnRegistro);
-        a1=findViewById(R.id.editTextTextEmailAddress);
+
+
+        a1=findViewById(R.id.editTextTextEmailAddress3);
         a2=findViewById(R.id.editTextTextPassword);
 
 
         btnIniciarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String user=a1.getText().toString();
+                String pass1=a2.getText().toString();
 
-                a1.setError("Prueba advertencia");
-                //String user=a1.getText().toString();
+                if ("".equals(user)){
+                    a1.setError("Rellene campo");
 
-                //if ("".equals(user)){
-                  //  a1.setError("Rellene campo");
-                //}
-
-                Toast toast = Toast.makeText(getBaseContext(), "Bienvenido: ",Toast.LENGTH_SHORT);
-                toast.show();
-                Intent b = new Intent(MainActivity.this,ActivityMenu.class);
-                startActivity(b);
+                    if ("".equals(pass1)){
+                        a2.setError("Rellene campos");
+                    }
+                }else{
+                    if ("".equals(pass1)){
+                        a2.setError("Rellene campo");
+                    }else{
+                        Toast toast = Toast.makeText(getBaseContext(), "Bienvenido: "+user,Toast.LENGTH_SHORT);
+                        toast.show();
+                        Intent b = new Intent(MainActivity.this,ActivityMenu.class);
+                        startActivity(b);
+                    }
+                }
             }
         });
 
