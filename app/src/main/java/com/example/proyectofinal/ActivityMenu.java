@@ -23,6 +23,7 @@ public class ActivityMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent a = new Intent(ActivityMenu.this,agregarnota.class);
+                startActivity(a);
             }
         });
 
