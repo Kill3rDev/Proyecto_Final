@@ -40,8 +40,8 @@
 
     <EditText
         android:id="@+id/txtNota"
-        android:layout_width="390dp"
-        android:layout_height="526dp"
+        android:layout_width="355dp"
+        android:layout_height="440dp"
         android:background="@drawable/shape"
         android:ems="10"
         android:gravity="center"
@@ -49,10 +49,9 @@
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.238"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintVertical_bias="0.618" />
 
     <Button
         android:id="@+id/btnAgregar"
