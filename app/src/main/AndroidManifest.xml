@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".agregarnota"></activity>
+        <activity android:name=".AcercaD"></activity>
+        <activity android:name=".agregarnota" />
         <activity android:name=".ActivityMenu" />
         <activity android:name=".ActivityRegis" />
         <activity android:name=".RegisAct" />
