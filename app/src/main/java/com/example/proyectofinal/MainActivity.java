@@ -66,5 +66,7 @@ MainActivity extends AppCompatActivity {
                 startActivity(a);
             }
         });
+
+        ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this,"db_usuarios", null, 1);
     }
 }
