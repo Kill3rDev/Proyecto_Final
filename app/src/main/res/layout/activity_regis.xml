@@ -8,7 +8,7 @@
     tools:context=".ActivityRegis">
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/editTxtNombre"
         android:layout_width="match_parent"
         android:layout_height="120px"
         android:background="@drawable/shape"
@@ -24,7 +24,7 @@
         app:layout_constraintVertical_bias="0.218" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress2"
+        android:id="@+id/editTxtUsuario"
         android:layout_width="match_parent"
         android:layout_height="120px"
         android:background="@drawable/shape"
@@ -40,7 +40,7 @@
         app:layout_constraintVertical_bias="0.351" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/editTxtPassContraseña"
         android:layout_width="match_parent"
         android:layout_height="120px"
         android:background="@drawable/shape"
@@ -55,7 +55,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPassword3"
+        android:id="@+id/editTxtPassConfirmarContra"
         android:layout_width="match_parent"
         android:layout_height="120px"
         android:background="@drawable/shape"
@@ -91,9 +91,9 @@
         android:text="REGISTRO"
         android:textSize="52dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword2"
+        app:layout_constraintEnd_toEndOf="@+id/editTxtPassContraseña"
         app:layout_constraintHorizontal_bias="0.56"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2"
+        app:layout_constraintStart_toStartOf="@+id/editTxtPassContraseña"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.095" />
 
