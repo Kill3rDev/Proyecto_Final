@@ -49,12 +49,8 @@ public class ActivityRegis extends AppCompatActivity {
               }else{
 
                 }
-
                  registrarUsuarios();
-                //Ya arregle el bug, era un error en la clase utilidades, era un error de sintaxis SQLite
-
             }
-
       });
     }
 
@@ -73,11 +69,7 @@ public class ActivityRegis extends AppCompatActivity {
         values.put(utilidades.CAMPO_CONTRASEÑA, contrasena.getText().toString());
 
         Long nombreResultante = db.insert(utilidades.TABLA_USUARIO, utilidades.CAMPO_NOMBRE, values);
-
-        Toast.makeText(getApplicationContext(),"Registrado: "+nombreResultante,Toast.LENGTH_SHORT).show();
-
-        db.close(); //Cerrando la base de datos cada q registra
-
-
+        Toast.makeText(getApplicationContext(),"Registrado correctamente",Toast.LENGTH_SHORT).show();
+        db.close();
     }
 }
