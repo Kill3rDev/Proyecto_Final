@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -35,8 +35,9 @@ public class ActivityRegis extends AppCompatActivity {
 
 
         regis.setOnClickListener(new View.OnClickListener() {
-            @Override
+           @Override
             public void onClick(View view) {
+
                 String d11=nombre.getText().toString();
                 String d12=usuario.getText().toString();
                 String d13=contrasena.getText().toString();
@@ -45,12 +46,21 @@ public class ActivityRegis extends AppCompatActivity {
                 if ("".equals(d11)||"".equals(d12)||"".equals(d13)||"".equals(d14)){
                     Toast toast = Toast.makeText(getBaseContext(), "Faltan campos por rellenar",Toast.LENGTH_SHORT);
                     toast.show();
-                }else{
-                    //registrarUsuarios(); Error de cierre identificado aqui
+              }else{
+
                 }
+
+                 registrarUsuarios();
+                //Ya arregle el bug, era un error en la clase utilidades, era un error de sintaxis SQLite
+
             }
-        });
+
+      });
     }
+
+
+
+
 
     private void registrarUsuarios() {
 
@@ -65,5 +75,9 @@ public class ActivityRegis extends AppCompatActivity {
         Long nombreResultante = db.insert(utilidades.TABLA_USUARIO, utilidades.CAMPO_NOMBRE, values);
 
         Toast.makeText(getApplicationContext(),"Registrado: "+nombreResultante,Toast.LENGTH_SHORT).show();
+
+        db.close(); //Cerrando la base de datos cada q registra
+
+
     }
 }
