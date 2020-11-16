@@ -3,6 +3,8 @@ package com.example.proyectofinal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.SQLException;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +19,8 @@ MainActivity extends AppCompatActivity {
 
     EditText a1;
     EditText a2;
+
+    ConexionSQLiteHelper helper= new ConexionSQLiteHelper(this,"db_usuarios",null,1);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,10 +51,22 @@ MainActivity extends AppCompatActivity {
                     if ("".equals(pass1)){
                         a2.setError("Rellene campo");
                     }else{
-                        Toast toast = Toast.makeText(getBaseContext(), "Bienvenido: "+user,Toast.LENGTH_SHORT);
-                        toast.show();
-                        Intent bf = new Intent(MainActivity.this,ActivityMenu.class);
-                        startActivity(bf);
+                        try {
+                            //Cursor cursor=helper.consultauser(a1.getText().toString(),a2.getText().toString());
+                            //if (cursor.getCount()>0){
+                                Toast toast = Toast.makeText(getBaseContext(), "Bienvenido: "+user,Toast.LENGTH_SHORT);
+                                toast.show();
+                                Intent bf = new Intent(MainActivity.this,ActivityMenu.class);
+                                startActivity(bf);
+                            //}else{
+                              //  Toast toast = Toast.makeText(getBaseContext(), "Usuario/contraseña incorrectos",Toast.LENGTH_SHORT);
+                                //toast.show();
+                            //}
+
+                            //Lineas comentadas posible erro(no cierra la app pero no hace ninguna accion)
+                        }catch (SQLException e){
+                            e.printStackTrace();
+                        }
                     }
                 }
             }

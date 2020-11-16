@@ -1,6 +1,8 @@
 package com.example.proyectofinal;
 
 import android.content.Context;
+import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -28,5 +30,15 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS usuarios");
         onCreate(db);
 
+    }
+
+
+    public Cursor consultauser(String usu,String pass)throws SQLException{
+
+        Cursor mcursor=null;
+        mcursor=this.getReadableDatabase().query("usuarios",new String[]{"user",
+                "nombre","usuario","contraseña"},"user like '"+usu+"' "+
+                "and contraseña like '"+pass+"' ",null,null,null,null);
+        return  mcursor;
     }
 }
