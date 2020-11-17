@@ -3,6 +3,7 @@ package com.example.proyectofinal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 
 import android.os.Bundle;
@@ -50,6 +51,8 @@ public class ActivityRegis extends AppCompatActivity {
 
                 }
                  registrarUsuarios();
+               Intent bf = new Intent(ActivityRegis.this,MainActivity.class);
+               startActivity(bf);
             }
       });
     }

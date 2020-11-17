@@ -52,20 +52,18 @@ MainActivity extends AppCompatActivity {
                         a2.setError("Rellene campo");
                     }else{
                         try {
-                            //Cursor cursor=helper.consultauser(a1.getText().toString(),a2.getText().toString());
-                            //if (cursor.getCount()>0){
+                            Cursor curs=helper.consultauser(user,pass1);
+                            if (curs.getCount()>0){
                                 Toast toast = Toast.makeText(getBaseContext(), "Bienvenido: "+user,Toast.LENGTH_SHORT);
                                 toast.show();
                                 Intent bf = new Intent(MainActivity.this,ActivityMenu.class);
                                 startActivity(bf);
-                            //}else{
-                              //  Toast toast = Toast.makeText(getBaseContext(), "Usuario/contraseña incorrectos",Toast.LENGTH_SHORT);
-                                //toast.show();
-                            //}
-
-                            //Lineas comentadas posible erro(no cierra la app pero no hace ninguna accion)
+                            }else{
+                              Toast toast = Toast.makeText(getBaseContext(), "Usuario/contraseña incorrectos",Toast.LENGTH_SHORT);
+                              toast.show();
+                            }
                         }catch (SQLException e){
-                            e.printStackTrace();
+                          e.printStackTrace();
                         }
                     }
                 }
@@ -82,7 +80,5 @@ MainActivity extends AppCompatActivity {
                 startActivity(a);
             }
         });
-
-        ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this,"db_usuarios", null, 1);
     }
 }

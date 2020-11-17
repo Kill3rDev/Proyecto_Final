@@ -36,8 +36,8 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
     public Cursor consultauser(String usu,String pass)throws SQLException{
 
         Cursor mcursor=null;
-        mcursor=this.getReadableDatabase().query("usuarios",new String[]{"user",
-                "nombre","usuario","contraseña"},"user like '"+usu+"' "+
+        mcursor=this.getReadableDatabase().query("user",new String[]{"nombre",
+                "usuario","contraseña"},"usuario like '"+usu+"' "+
                 "and contraseña like '"+pass+"' ",null,null,null,null);
         return  mcursor;
     }
