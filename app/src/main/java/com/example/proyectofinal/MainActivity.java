@@ -1,10 +1,14 @@
 package com.example.proyectofinal;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.SQLException;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +20,7 @@ MainActivity extends AppCompatActivity {
 
     Button btnIniciarSesion;
     Button btnRegistro;
+    final private  int req=111;
 
     EditText a1;
     EditText a2;
@@ -26,6 +31,8 @@ MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        permis();
 
         btnIniciarSesion=findViewById(R.id.btnIniciarSesion);
         btnRegistro=findViewById(R.id.btnRegistro);
@@ -80,5 +87,19 @@ MainActivity extends AppCompatActivity {
                 startActivity(a);
             }
         });
+    }
+
+    private void permis() {
+
+    int camara= ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CAMERA);
+    int audio=ActivityCompat.checkSelfPermission(MainActivity.this,Manifest.permission.READ_EXTERNAL_STORAGE);
+    int escrit=ActivityCompat.checkSelfPermission(MainActivity.this,Manifest.permission.RECORD_AUDIO);
+
+    if (camara!= PackageManager.PERMISSION_GRANTED||audio!=PackageManager.PERMISSION_GRANTED||escrit!=PackageManager.PERMISSION_GRANTED){
+       if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
+           requestPermissions(new String[]{Manifest.permission.CAMERA,Manifest.permission.RECORD_AUDIO,Manifest.permission.READ_EXTERNAL_STORAGE},req);
+       }
+    }
+
     }
 }
