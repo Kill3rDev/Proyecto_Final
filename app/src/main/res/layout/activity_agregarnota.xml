@@ -42,7 +42,7 @@
     <EditText
         android:id="@+id/txtNota"
         android:layout_width="355dp"
-        android:layout_height="440dp"
+        android:layout_height="370dp"
         android:background="@drawable/shape"
         android:ems="10"
         android:gravity="center"
@@ -52,7 +52,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.649" />
+        app:layout_constraintVertical_bias="0.731" />
 
     <Button
         android:id="@+id/btnAgregar"
@@ -80,6 +80,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.191" />
 
+    <Button
+        android:id="@+id/fech22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/buttonstyle"
+        android:text="Hora"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.256"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.295" />
+
     <TextView
         android:id="@+id/fech"
         android:layout_width="wrap_content"
@@ -91,5 +104,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.207" />
+
+    <TextView
+        android:id="@+id/fech2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="----"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.648"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.31" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
