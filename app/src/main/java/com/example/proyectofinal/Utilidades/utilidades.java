@@ -9,9 +9,9 @@ public class utilidades {
     public static final String CAMPO_CONTRASEÑA = "contraseña";
 
    public static final String CREAR_TABLA_USUARIO =
-           "CREATE TABLE "+TABLA_USUARIO+"" +
-           " ("+CAMPO_NOMBRE+" TEXT, " +
-           ""+CAMPO_USUARIO+" TEXT, " +
-           ""+CAMPO_CONTRASEÑA+" TEXT)" ;
+           "CREATE TABLE " + TABLA_USUARIO + "" +
+           " (" + CAMPO_NOMBRE + " TEXT, " +
+           "" + CAMPO_USUARIO+" TEXT, " +
+           "" + CAMPO_CONTRASEÑA + " TEXT)" ;
 
 }
