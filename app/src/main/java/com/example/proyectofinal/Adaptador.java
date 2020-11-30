@@ -9,15 +9,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Adaptador extends RecyclerView.Adapter<Adaptador.Viewholder> {
+    //Este es el adaptador
 
-    private List<Modelo> modeloclaseList;
+    private ArrayList<Modelo> modeloList;
 
-    public Adaptador(List<Modelo> modeloclaseList){
+    public Adaptador(ArrayList<Modelo> modeloList){
 
-        this.modeloclaseList = modeloclaseList;
+        this.modeloList = modeloList;
     }
 
 
@@ -32,9 +34,9 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.Viewholder> {
     @Override
     public void onBindViewHolder(@NonNull Adaptador.Viewholder viewholder, int position) {
 
-        int resource = modeloclaseList.get(position).getImagenIcono();
-        String titulo = modeloclaseList.get(position).getTitulo();
-        String cuerpo = modeloclaseList.get(position).getCuerpo();
+        int resource = modeloList.get(position).getImagenIcono();
+        String titulo = modeloList.get(position).getTitulo();
+        String cuerpo = modeloList.get(position).getCuerpo();
         viewholder.setData(resource,titulo,cuerpo);
 
 
@@ -42,7 +44,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.Viewholder> {
 
     @Override
     public int getItemCount() {
-        return modeloclaseList.size();
+        return modeloList.size();
     }
 
     class Viewholder extends RecyclerView.ViewHolder {

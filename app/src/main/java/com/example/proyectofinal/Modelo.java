@@ -2,6 +2,9 @@ package com.example.proyectofinal;
 
 public class Modelo {
 
+    //Esta clase es lo que vendria siendo un constructor para la nota
+    /// con sus atributos
+
     private int imagenIcono;
     String titulo;
     String cuerpo;
@@ -10,6 +13,10 @@ public class Modelo {
         this.imagenIcono = imagenIcono;
         this.titulo = titulo;
         this.cuerpo = cuerpo;
+
+    }
+
+    public Modelo() {
 
     }
 
@@ -24,6 +31,20 @@ public class Modelo {
     public String getCuerpo() {
         return cuerpo;
     }
+
+    public void setImagenIcono(int imagenIcono) {
+        this.imagenIcono = imagenIcono;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public void setCuerpo(String cuerpo) {
+        this.cuerpo = cuerpo;
+    }
+
+
 }
 
 
