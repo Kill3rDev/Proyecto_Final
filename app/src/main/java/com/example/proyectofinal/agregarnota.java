@@ -4,12 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.ContentValues;
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
+
+import com.example.proyectofinal.Utilidades.utilidades;
 
 import java.util.Calendar;
 
@@ -21,6 +28,12 @@ public class agregarnota extends AppCompatActivity {
     Button fec2;
     TextView te2;
     TimePickerDialog timePickerDialog;
+    Button agre;
+
+    // Variables para agregar nota
+    EditText titu;
+    EditText desc;
+    EditText nott;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +43,11 @@ public class agregarnota extends AppCompatActivity {
         te=(TextView)findViewById(R.id.fech);
         te2=(TextView)findViewById(R.id.fech2);
         fec2=(Button)findViewById(R.id.fech22);
+        agre=findViewById(R.id.btnAgregar);
+
+        titu=findViewById(R.id.editTextTextPersonName4);
+        desc= findViewById(R.id.editTextTextPersonName5);
+        nott= findViewById(R.id.txtNota);
 
 
 
@@ -67,5 +85,33 @@ public class agregarnota extends AppCompatActivity {
                 datePickerDialog.show();
             }
         });
+
+
+        agre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addnota();
+                Intent a= new Intent(agregarnota.this,ActivityMenu.class);
+                startActivity(a);
+            }
+        });
+    }
+
+
+    private void addnota(){
+        ConexionSQLiteHelper cn = new ConexionSQLiteHelper(this,"db_usuarios", null,1);
+        SQLiteDatabase db = cn.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+        values.put(utilidades.CAMPO_TITULO, titu.getText().toString());
+        values.put(utilidades.CAMPO_DESCRIPCION, desc.getText().toString());
+        values.put(utilidades.CAMPO_NOTA, nott.getText().toString());
+        values.put(utilidades.CAMPO_FECHA, te.getText().toString());
+        values.put(utilidades.CAMPO_HORA, te2.getText().toString());
+
+        Long nombreResultante = db.insert(utilidades.TABLA_NOTA, utilidades.CAMPO_TITULO, values);
+        Toast.makeText(getApplicationContext(),"Nota creada",Toast.LENGTH_SHORT).show();
+        db.close();
     }
 }

@@ -13,6 +13,7 @@ public class ActivityMenu extends AppCompatActivity {
 
     Button add;
     Button acer;
+    Button vn;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,11 +21,22 @@ public class ActivityMenu extends AppCompatActivity {
 
         add=findViewById(R.id.btnAgregandoNota);
         acer=findViewById(R.id.btnAcerdaDe);
+        vn=findViewById(R.id.btnVerNotas);
         add.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
                 Intent a = new Intent(ActivityMenu.this,agregarnota.class);
+                startActivity(a);
+            }
+        });
+
+
+        vn.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                Intent a = new Intent(ActivityMenu.this, VistaRecyclerNotas.class);
                 startActivity(a);
             }
         });

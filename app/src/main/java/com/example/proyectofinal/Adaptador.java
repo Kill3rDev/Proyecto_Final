@@ -67,10 +67,6 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.Viewholder> {
             titulo.setText(titulotexto);
             cuerpo.setText(cuerpoTexto);
 
-
-
-
-
         }
 
     }
