@@ -52,6 +52,9 @@ public class VistaRecyclerNotas extends AppCompatActivity {
         adaptador.notifyDataSetChanged();
     }
 
+
+    //metodo para consultar y agregar
+
     private void ConsultarListaNotas() {
 
         SQLiteDatabase db =coon.getReadableDatabase();
