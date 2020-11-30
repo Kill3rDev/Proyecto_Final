@@ -38,8 +38,6 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.Viewholder> {
         String titulo = modeloList.get(position).getTitulo();
         String cuerpo = modeloList.get(position).getCuerpo();
         viewholder.setData(resource,titulo,cuerpo);
-
-
     }
 
     @Override

@@ -14,12 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class VistaRecyclerNotas extends AppCompatActivity {
- // este es el recycler
 
-    //atributos del recycler
     ArrayList<Modelo> modeloList;
     RecyclerView  recyclerNotas;
-    //List<Modelo> modeloList = new ArrayList<>();
 
     ConexionSQLiteHelper coon;
     private RecyclerView recyclerView;
@@ -27,11 +24,7 @@ public class VistaRecyclerNotas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-
         setContentView(R.layout.activity_vista_recycler_notas);
-
-
 
         LinearLayoutManager  layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -41,8 +34,6 @@ public class VistaRecyclerNotas extends AppCompatActivity {
          modeloList = new ArrayList<>();
         recyclerView=findViewById(R.id.RecyclerView);
         recyclerView.setLayoutManager(layoutManager);
-        ConsultarListaNotas();
-
 
         //modeloList.add(new Modelo(R.drawable.ic_launcher_background, "Este es el titulo 1", "Este es el titulo 1 de usuario"));
 
@@ -50,10 +41,9 @@ public class VistaRecyclerNotas extends AppCompatActivity {
         recyclerView.setAdapter(adaptador);
 
         adaptador.notifyDataSetChanged();
+
+        //ConsultarListaNotas(); Error identificado aqui
     }
-
-
-    //metodo para consultar y agregar
 
     private void ConsultarListaNotas() {
 
@@ -66,13 +56,10 @@ public class VistaRecyclerNotas extends AppCompatActivity {
         while (cursor.moveToNext()){
 
             modelo = new Modelo();
-            modelo.setTitulo(cursor.getString(1));
-            modelo.setCuerpo(cursor.getString(2));
+            modelo.setTitulo(cursor.getString(0));
+            modelo.setCuerpo(cursor.getString(1));
 
             modeloList.add(modelo);
-
-
-
         }
     }
 }
