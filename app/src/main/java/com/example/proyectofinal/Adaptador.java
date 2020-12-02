@@ -1,5 +1,6 @@
 package com.example.proyectofinal;
 
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Adaptador extends RecyclerView.Adapter<Adaptador.Viewholder> {
-    //Este es el adaptador
 
     private ArrayList<Modelo> modeloList;
 
@@ -38,6 +38,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.Viewholder> {
         String titulo = modeloList.get(position).getTitulo();
         String cuerpo = modeloList.get(position).getCuerpo();
         viewholder.setData(resource,titulo,cuerpo);
+        viewholder.setData(resource,titulo,cuerpo);
     }
 
     @Override
@@ -61,14 +62,13 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.Viewholder> {
 
         }
 
-        private void setData(int imageResource,  String titulotexto, String cuerpoTexto){
+        private void setData(int imageResource, String titulotexto, String cuerpoTexto){
 
             imageView.setImageResource(imageResource);
             titulo.setText(titulotexto);
             cuerpo.setText(cuerpoTexto);
 
         }
-
     }
 }
 
