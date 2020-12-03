@@ -90,28 +90,9 @@ public class agregarnota extends AppCompatActivity {
         agre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addnota();
                 Intent a= new Intent(agregarnota.this,ActivityMenu.class);
                 startActivity(a);
             }
         });
-    }
-
-
-    private void addnota(){
-        ConexionSQLiteHelper cn = new ConexionSQLiteHelper(this,"db_usuarios", null,1);
-        SQLiteDatabase db = cn.getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-
-        values.put(utilidades.CAMPO_TITULO, titu.getText().toString());
-        values.put(utilidades.CAMPO_DESCRIPCION, desc.getText().toString());
-        values.put(utilidades.CAMPO_NOTA, nott.getText().toString());
-        values.put(utilidades.CAMPO_FECHA, te.getText().toString());
-        values.put(utilidades.CAMPO_HORA, te2.getText().toString());
-
-        Long nombreResultante = db.insert(utilidades.TABLA_NOTA, utilidades.CAMPO_TITULO, values);
-        Toast.makeText(getApplicationContext(),"Nota creada",Toast.LENGTH_SHORT).show();
-        db.close();
     }
 }
