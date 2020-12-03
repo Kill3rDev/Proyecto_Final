@@ -67,7 +67,6 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.Viewholder> {
             imageView.setImageResource(imageResource);
             titulo.setText(titulotexto);
             cuerpo.setText(cuerpoTexto);
-
         }
     }
 }

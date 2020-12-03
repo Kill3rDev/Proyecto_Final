@@ -2,9 +2,6 @@ package com.example.proyectofinal;
 
 public class Modelo {
 
-    //Esta clase es lo que vendria siendo un constructor para la nota
-    /// con sus atributos
-
     private int imagenIcono;
     String titulo;
     String cuerpo;

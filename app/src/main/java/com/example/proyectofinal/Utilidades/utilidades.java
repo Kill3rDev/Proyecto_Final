@@ -30,7 +30,7 @@ public class utilidades {
             "CREATE TABLE " + TABLA_NOTA + "" +
                     " (" + CAMPO_TITULO + " TEXT, " +
                     "" + CAMPO_DESCRIPCION+" TEXT, " +
-                    "" + CAMPO_FECHA + " TEXT)" +
+                    "" + CAMPO_FECHA + " TEXT" +
                     "" + CAMPO_HORA+" TEXT, " +
-                    "" + CAMPO_NOTA+" TEXT, ";
+                    "" + CAMPO_NOTA+" TEXT)" ;
 }

@@ -35,14 +35,12 @@ public class VistaRecyclerNotas extends AppCompatActivity {
         recyclerView=findViewById(R.id.RecyclerView);
         recyclerView.setLayoutManager(layoutManager);
 
-        modeloList.add(new Modelo(R.drawable.ic_launcher_background, "Este es el titulo 1", "Este es el titulo 1 de usuario"));
+
 
         Adaptador adaptador = new Adaptador(modeloList);
         recyclerView.setAdapter(adaptador);
-
+        ConsultarListaNotas();
         adaptador.notifyDataSetChanged();
-
-        //ConsultarListaNotas();
     }
 
     private void ConsultarListaNotas() {
@@ -51,14 +49,14 @@ public class VistaRecyclerNotas extends AppCompatActivity {
 
         Modelo modelo = null;
 
-        Cursor cursor = db.rawQuery("SELECT * FROM  " + utilidades.TABLA_NOTA,null);
+        Cursor cursor = db.rawQuery("SELECT * FROM  " + utilidades.TABLA_USUARIO,null);
 
         while (cursor.moveToNext()){
 
             modelo = new Modelo();
-            modelo.setTitulo(cursor.getString(1));
-            modelo.setCuerpo(cursor.getString(2));
-
+            modelo.setImagenIcono(R.drawable.note);
+            modelo.setTitulo(cursor.getString(0));
+            modelo.setCuerpo(cursor.getString(1));
             modeloList.add(modelo);
         }
     }
