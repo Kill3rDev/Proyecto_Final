@@ -28,9 +28,8 @@ public class agregarnota extends AppCompatActivity {
     Button fec2;
     TextView te2;
     TimePickerDialog timePickerDialog;
-    Button agre;
 
-    // Variables para agregar nota
+    Button agre;
     EditText titu;
     EditText desc;
     EditText nott;
@@ -90,9 +89,29 @@ public class agregarnota extends AppCompatActivity {
         agre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                addnota();
                 Intent a= new Intent(agregarnota.this,ActivityMenu.class);
                 startActivity(a);
             }
         });
+    }
+
+
+    private void addnota() {
+
+        ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this, "db_usuarios", null, 1);
+        SQLiteDatabase db = conn.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(utilidades.CAMPO_TITULO, titu.getText().toString());
+        values.put(utilidades.CAMPO_DESCRIPCION, desc.getText().toString());
+        values.put(utilidades.CAMPO_FECHA, te.getText().toString());
+        values.put(utilidades.CAMPO_HORA, te2.getText().toString());
+        values.put(utilidades.CAMPO_NOTA, nott.getText().toString());
+
+
+        Long nom = db.insert(utilidades.TABLA_NOTAS, utilidades.CAMPO_TITULO, values);
+        Toast.makeText(getApplicationContext(),"Nota creada",Toast.LENGTH_SHORT).show();
+        db.close();
     }
 }

@@ -49,7 +49,7 @@ public class VistaRecyclerNotas extends AppCompatActivity {
 
         Modelo modelo = null;
 
-        Cursor cursor = db.rawQuery("SELECT * FROM  " + utilidades.TABLA_USUARIO,null);
+        Cursor cursor = db.rawQuery("SELECT * FROM  " + utilidades.TABLA_NOTAS,null);
 
         while (cursor.moveToNext()){
 

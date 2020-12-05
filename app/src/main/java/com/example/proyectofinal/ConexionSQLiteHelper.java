@@ -13,6 +13,8 @@ import com.example.proyectofinal.Utilidades.utilidades;
 
 public class ConexionSQLiteHelper extends SQLiteOpenHelper {
 
+    final String CREAR_TABLA_USUARIO="CREATE TABLE usuarios(nombre TEXT,usuario TEXT, contraseña TEXT)";
+    final String CREAR_TABLA_NOTAS="CREATE TABLE notas(titulo TEXT, desc TEXT, fecha TEXT, hora TEXT, nota TEXT)";
 
     public ConexionSQLiteHelper(@Nullable Context context, @Nullable String name,
                                 @Nullable SQLiteDatabase.CursorFactory factory, int version) {
@@ -22,12 +24,14 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
+        db.execSQL(utilidades.CREAR_TABLA_NOTAS);
         db.execSQL(utilidades.CREAR_TABLA_USUARIO);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int versionAntigua, int versionNueva) {
         db.execSQL("DROP TABLE IF EXISTS usuarios");
+        db.execSQL("DROP TABLE IF EXISTS notas");
         onCreate(db);
 
     }

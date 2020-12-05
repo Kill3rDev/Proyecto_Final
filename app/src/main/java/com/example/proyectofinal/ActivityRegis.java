@@ -50,7 +50,7 @@ public class ActivityRegis extends AppCompatActivity {
               }else{
 
                 }
-                 registrarUsuarios();
+                registrarUsuarios();
                Intent bf = new Intent(ActivityRegis.this,MainActivity.class);
                startActivity(bf);
             }
