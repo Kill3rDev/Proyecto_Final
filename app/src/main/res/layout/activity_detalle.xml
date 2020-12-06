@@ -9,7 +9,7 @@
 
     <Button
         android:id="@+id/btgrab"
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:background="@drawable/buttonstyle"
         android:onClick="recorder"
@@ -23,7 +23,7 @@
 
     <Button
         android:id="@+id/btreprod"
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:background="@drawable/buttonstyle"
         android:onClick="reproducir"
@@ -88,11 +88,11 @@
 
     <Button
         android:id="@+id/btimag"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/buttonstyle"
         android:onClick="loadimag"
-        android:text="Imagen"
+        android:text="cambiar imagen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.291"
@@ -100,16 +100,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.765" />
 
-    <Button
-        android:id="@+id/btvid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/buttonstyle"
-        android:text="Video"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.73"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.765" />
 </androidx.constraintlayout.widget.ConstraintLayout>
