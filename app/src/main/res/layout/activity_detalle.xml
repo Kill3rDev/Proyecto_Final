@@ -8,10 +8,11 @@
     tools:context=".detalle">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btgrab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/buttonstyle"
+        android:onClick="recorder"
         android:text="Grabar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,10 +22,11 @@
         app:layout_constraintVertical_bias="0.906" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btreprod"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/buttonstyle"
+        android:onClick="reproducir"
         android:text="Reproducir"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,12 +36,11 @@
         app:layout_constraintVertical_bias="0.906" />
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="157dp"
-        android:layout_height="132dp"
+        android:id="@+id/imagxd"
+        android:layout_width="242dp"
+        android:layout_height="247dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.026"
@@ -50,7 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="192dp"
+        android:layout_marginTop="272dp"
         android:text="Titulo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -60,7 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="228dp"
+        android:layout_marginTop="316dp"
         android:text="Descripción"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -78,18 +79,19 @@
     <TextView
         android:id="@+id/textView12"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="100dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="264dp"
+        android:layout_marginTop="360dp"
         android:text="Nota"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btimag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/buttonstyle"
+        android:onClick="loadimag"
         android:text="Imagen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,7 +101,7 @@
         app:layout_constraintVertical_bias="0.765" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btvid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/buttonstyle"
