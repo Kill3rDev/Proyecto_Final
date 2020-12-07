@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<resources>
+
+
+
+    <string name="log1">User</string>
+    <string name="log2">Password</string>
+    <string name="log3">Login</string>
+    <string name="log4">Sign up</string>
+
+
+    ///////////////////////////////////////////
+
+
+    <string name="reg1">Name</string>
+    <string name="reg2">User</string>
+    <string name="reg3">Password</string>
+    <string name="reg5">Confirm password</string>
+    <string name="reg4">Sign up</string>
+
+
+
+    ////////////////////////////////////////
+
+
+    <string name="m1">My notes</string>
+    <string name="m2">Add note</string>
+    <string name="m3">About</string>
+
+
+    /////////////////////////////////////////
+
+    <string name="ab1">Developers</string>
+
+
+    //////////////////////////////////////////
+
+
+    <string name="add1">Title</string>
+    <string name="add2">Description</string>
+    <string name="add3">Date</string>
+    <string name="add4">Hour</string>
+    <string name="add5">Add note</string>
+    <string name="add6">Save</string>
+    <string name="add7">Save</string>
+
+    <string name="tiu1">Sign up</string>
+    <string name="tiu2">ITSUR Notes</string>
+
+
+
+</resources>
