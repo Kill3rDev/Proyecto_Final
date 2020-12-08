@@ -14,7 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Adaptador extends RecyclerView.Adapter<Adaptador.Viewholder> {
+public class Adaptador extends RecyclerView.Adapter<Adaptador.Viewholder>
+implements View.OnClickListener{
 
 
 
@@ -42,6 +43,18 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.Viewholder> {
 
 
 
+    }
+
+    public void SentOnClickListener(View.OnClickListener listener){
+        this.listener=listener;
+    }
+
+    @Override
+    public void onClick(View view) {
+
+        if(listener!=null){
+            listener.onClick(view);
+        }
     }
 
     //PASO 4
@@ -82,7 +95,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.Viewholder> {
     @Override
     public Adaptador.Viewholder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_layout, viewGroup, false);
-        view.setOnClickListener(listener);
+        view.setOnClickListener(this);
 
         return new Viewholder(view);
 

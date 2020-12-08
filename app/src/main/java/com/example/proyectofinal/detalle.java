@@ -14,6 +14,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -22,8 +23,6 @@ import android.widget.Toast;
 
 import java.io.IOException;
 
-
-///Hector Voy a comentar el codigo para que veas lo que hice paso a paso
 public class detalle extends AppCompatActivity {
 
     MediaRecorder grabacion;
@@ -31,6 +30,7 @@ public class detalle extends AppCompatActivity {
     Button btnRe;
     ImageView imag;
     Button bimag;
+    TextView  titulo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,31 +40,7 @@ public class detalle extends AppCompatActivity {
         btnRe=(Button)findViewById(R.id.btgrab);
         imag=(ImageView)findViewById(R.id.imagxd);
         bimag=(Button)findViewById(R.id.btimag);
-
-        //PASO 1
-        /// Primeramente aqui en el oncreate
-        // //Asigne los textview que estan en el layout detalle a una variable de su mismo tipo, osea textview
-
-
-        TextView textTitulo = findViewById(R.id.textViewTitulo);
-        TextView textDescripcion = findViewById(R.id.textViewDescripcion);
-        TextView textNota = findViewById(R.id.textViewNota);
-        TextView textHoraFecha = findViewById(R.id.textViewHorayFecha);
-
-        ///Paso 8
-        String titulo = "titulo not set";
-        String Descripcion = "Descripcion not set";
-        String nota = "nota not set";
-        String Horafecha = "Hora o Fecha not set";
-
-        Bundle extras  = getIntent().getExtras();
-        if (extras != null){
-            titulo = extras.getString("titulo");
-            Descripcion = extras.getString("Descripcion");
-            nota = extras.getString("nota");
-            Horafecha = extras.getString("Hora Fecha");
-
-        }
+        titulo=(TextView)findViewById(R.id.textViewTitulo);
 
 
 

@@ -9,6 +9,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.proyectofinal.Utilidades.utilidades;
 
@@ -19,7 +20,6 @@ public class VistaRecyclerNotas extends AppCompatActivity {
 
     ArrayList<Modelo> modeloList;
     RecyclerView  recyclerNotas;
-//// PASO 6 crear variable listener de tipo adaptador
     private Adaptador.RecyclerViewClickListener listener;
 
 
@@ -40,11 +40,7 @@ public class VistaRecyclerNotas extends AppCompatActivity {
         recyclerView=findViewById(R.id.RecyclerView);
         recyclerView.setLayoutManager(layoutManager);
 
-
-
-        ///Paso 7 implementar este medodo
         setOnClickListener();
-        //paso 8 , agregar como parametro el listener,
         Adaptador adaptador = new Adaptador(modeloList);
         adaptador.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,13 +49,13 @@ public class VistaRecyclerNotas extends AppCompatActivity {
                 recyclerView.getChildAdapterPosition(view);
                 view.findViewById(R.id.textTitle);
 
-                Modelo modelo = new Modelo();
-
-               modelo = modeloList.get(recyclerView.getChildAdapterPosition(view));
+                String info=modeloList.get(recyclerView.getChildAdapterPosition(view)).getTitulo().toString();
 
 
-
-
+                Toast toast = Toast.makeText(getBaseContext(), "esto manda: " + info,Toast.LENGTH_SHORT);
+                toast.show();
+                Intent bf = new Intent(VistaRecyclerNotas.this,detalle.class);
+                startActivity(bf);
 
             }
         });
@@ -70,24 +66,16 @@ public class VistaRecyclerNotas extends AppCompatActivity {
 
     }
 
-    ///Paso7.1
     private void setOnClickListener() {
         listener = new Adaptador.RecyclerViewClickListener() {
             @Override
             public void OnClick(View v, int position) {
-                //Aqui es donde va la el layout detalle
                 Intent intent = new Intent(getApplicationContext(), detalle.class);
-
-                ///Aqui creo que van mas cosas de la nota pero estoy algo confundido como nada mas las toma del la clase modelo que es como la que contruye la nota
-                /// (opcion)lo podriamos dejar asi
 
                 intent.putExtra("titulo" , modeloList.get(position).getTitulo());
                 intent.putExtra("cuerpo", modeloList.get(position).getCuerpo());
                 intent.putExtra("imageIcon" , modeloList.get(position).getImagenIcono());
-
-                //IniciandoActividad
                 startActivity(intent);
-
             }
         };
     }
