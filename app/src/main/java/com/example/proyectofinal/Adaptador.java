@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,23 +16,36 @@ import java.util.List;
 
 public class Adaptador extends RecyclerView.Adapter<Adaptador.Viewholder> {
 
+
+
     private ArrayList<Modelo> modeloList;
+    private View.OnClickListener listener;
 
     //PASO 3 crear el listener
 
 
-    private RecyclerViewClickListener listener;
+
+
 
     ///PASO 5 agregar como parametro recyclerviewlistener a este metodo llamado adaptador
 
-    public Adaptador(ArrayList<Modelo> modeloList,  RecyclerViewClickListener listener){
+    public Adaptador(ArrayList<Modelo> modeloList){
 
         this.modeloList = modeloList;
+
+    }
+
+    public void setOnClickListener (View.OnClickListener listener){
+
         this.listener = listener;
+
+
+
+
     }
 
     //PASO 4
-    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
 
 
         private TextView txttitulo;
@@ -42,6 +56,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.Viewholder> {
         public MyViewHolder(final View view ){
 
             super(view);
+
 
             ////Aqui creo que van las variables que estan los datos de la nota para que se invoquen en el nuevo activity, creo que los debe tomar del layout agregarnota
 
@@ -54,15 +69,11 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.Viewholder> {
             txtFechaHora = view.findViewById(R.id.fech);
 
             //////////////////////////////////////////////////////
-            view.setOnClickListener(this);
+
 
         }
 
-        @Override
-        public void onClick(View view) {
-            listener.OnClick(view, getAdapterPosition());
 
-        }
     }
 
 
@@ -71,7 +82,12 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.Viewholder> {
     @Override
     public Adaptador.Viewholder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_layout, viewGroup, false);
+        view.setOnClickListener(listener);
+
         return new Viewholder(view);
+
+
+
     }
 
     @Override

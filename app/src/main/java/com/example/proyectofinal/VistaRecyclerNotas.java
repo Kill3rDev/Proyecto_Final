@@ -45,10 +45,29 @@ public class VistaRecyclerNotas extends AppCompatActivity {
         ///Paso 7 implementar este medodo
         setOnClickListener();
         //paso 8 , agregar como parametro el listener,
-        Adaptador adaptador = new Adaptador(modeloList, listener);
+        Adaptador adaptador = new Adaptador(modeloList);
+        adaptador.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                recyclerView.getChildAdapterPosition(view);
+                view.findViewById(R.id.textTitle);
+
+                Modelo modelo = new Modelo();
+
+               modelo = modeloList.get(recyclerView.getChildAdapterPosition(view));
+
+
+
+
+
+            }
+        });
+
         recyclerView.setAdapter(adaptador);
         ConsultarListaNotas();
         adaptador.notifyDataSetChanged();
+
     }
 
     ///Paso7.1

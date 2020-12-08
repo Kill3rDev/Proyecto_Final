@@ -9,6 +9,7 @@
     android:background="@drawable/head">
 
 
+
     <ImageView
         android:id="@+id/imageViewnota"
         android:layout_width="116dp"
