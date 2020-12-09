@@ -78,9 +78,9 @@ public class agregarnota extends AppCompatActivity {
                 datePickerDialog= new DatePickerDialog(agregarnota.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                        te.setText(day+"/"+(mont+1)+"/"+year);
+                        te.setText(i+"/"+(i1+1)+"/"+i2);
                     }
-                },year,mont,day);
+                },year, mont,day);
                 datePickerDialog.show();
             }
         });
