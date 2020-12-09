@@ -8,6 +8,8 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.net.Uri;
@@ -21,6 +23,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.proyectofinal.Utilidades.utilidades;
+
 import java.io.IOException;
 
 public class detalle extends AppCompatActivity {
@@ -31,16 +35,48 @@ public class detalle extends AppCompatActivity {
     ImageView imag;
     Button bimag;
     TextView  titulo;
+    Bundle datos;
+    TextView desc;
+    TextView nota;
+    TextView hor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle);
 
+
         btnRe=(Button)findViewById(R.id.btgrab);
         imag=(ImageView)findViewById(R.id.imagxd);
         bimag=(Button)findViewById(R.id.btimag);
         titulo=(TextView)findViewById(R.id.textViewTitulo);
+        desc=(TextView)findViewById(R.id.textViewDescripcion);
+        nota=(TextView)findViewById(R.id.textViewNota);
+        hor=(TextView)findViewById(R.id.textViewHorayFecha);
+
+        datos = getIntent().getExtras();
+        String cc=datos.getString("pasa");
+        String cc2=datos.getString("pasa2");
+        titulo.setText(cc);
+        desc.setText(cc2);
+
+        ConexionSQLiteHelper db = new ConexionSQLiteHelper(this, "db_usuarios", null, 2);
+
+        SQLiteDatabase cn=db.getReadableDatabase();
+        String[] parametros={titulo.getText().toString()};
+
+        String[] campos={utilidades.CAMPO_FECHA,utilidades.CAMPO_HORA,utilidades.CAMPO_NOTA};
+
+        Cursor cursor=cn.query(utilidades.TABLA_NOTAS,campos,utilidades.CAMPO_TITULO+"=?",parametros,null,null,null);
+        cursor.moveToFirst();
+
+        String tres=cursor.getString(0);
+        String cinco=cursor.getString(1);
+        String cccc=cursor.getString(2);
+        nota.setText(cccc);
+        String horay="Hora:    "+ cinco+"   fecha de:   "+tres;
+        hor.setText(horay);
+
 
 
 

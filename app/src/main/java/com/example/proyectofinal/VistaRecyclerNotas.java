@@ -50,11 +50,10 @@ public class VistaRecyclerNotas extends AppCompatActivity {
                 view.findViewById(R.id.textTitle);
 
                 String info=modeloList.get(recyclerView.getChildAdapterPosition(view)).getTitulo().toString();
-
-
-                Toast toast = Toast.makeText(getBaseContext(), "esto manda: " + info,Toast.LENGTH_SHORT);
-                toast.show();
+                String info2=modeloList.get(recyclerView.getChildAdapterPosition(view)).getCuerpo().toString();
                 Intent bf = new Intent(VistaRecyclerNotas.this,detalle.class);
+                bf.putExtra("pasa", info);
+                bf.putExtra("pasa2", info2);
                 startActivity(bf);
 
             }

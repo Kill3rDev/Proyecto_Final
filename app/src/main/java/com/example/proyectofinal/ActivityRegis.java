@@ -48,11 +48,15 @@ public class ActivityRegis extends AppCompatActivity {
                     Toast toast = Toast.makeText(getBaseContext(), "Faltan campos por rellenar",Toast.LENGTH_SHORT);
                     toast.show();
               }else{
-
+                    if (d13.equals(d14)){
+                        registrarUsuarios();
+                        Intent bf = new Intent(ActivityRegis.this,MainActivity.class);
+                        startActivity(bf);
+                    }else{
+                        Toast toast = Toast.makeText(getBaseContext(), "Las contraseñas no coinciden",Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
                 }
-                registrarUsuarios();
-               Intent bf = new Intent(ActivityRegis.this,MainActivity.class);
-               startActivity(bf);
             }
       });
     }
