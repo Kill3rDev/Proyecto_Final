@@ -2,9 +2,12 @@ package com.example.proyectofinal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlarmManager;
 import android.app.DatePickerDialog;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -34,6 +37,9 @@ public class agregarnota extends AppCompatActivity {
     EditText desc;
     EditText nott;
 
+    private AlarmManager alarmMgr;
+    private PendingIntent alarmIntent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +59,7 @@ public class agregarnota extends AppCompatActivity {
         fec2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Calendar cc2=Calendar.getInstance();
                 int hour=cc2.get(Calendar.HOUR);
                 int minute=cc2.get(Calendar.MINUTE);
@@ -60,6 +67,11 @@ public class agregarnota extends AppCompatActivity {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int i, int i1) {
                         te2.setText(i+":"+i1);
+                        Calendar c = Calendar.getInstance();
+                        c.set(Calendar.HOUR_OF_DAY, i);
+                        c.set(Calendar.MINUTE,i1);
+                        c.set(Calendar.SECOND,0);
+                        startalamr(c);
                     }
                 },hour,minute,false);
                 timePickerDialog.show();
@@ -94,6 +106,16 @@ public class agregarnota extends AppCompatActivity {
                 startActivity(a);
             }
         });
+    }
+
+
+
+    public  void startalamr(Calendar c){
+        AlarmManager alarmManager =(AlarmManager)getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(this, Receiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this,1,intent,0);
+
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(),pendingIntent);
     }
 
 
